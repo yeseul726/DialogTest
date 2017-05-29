@@ -29,13 +29,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.setTitle("첫번째 다이얼로그");
         dialog.setIcon(R.mipmap.icon);
         //dialog.setMessage("여기는 메시지를 쓰는 곳입니다.");
-        dialog.setItems(itemArr, new DialogInterface.OnClickListener() { //항목이 클릭되었을 때 처리되게 하려면 여기에 설정해줘야함 (익명클래스로)
+       /* dialog.setItems(itemArr, new DialogInterface.OnClickListener() { //항목이 클릭되었을 때 처리되게 하려면 여기에 설정해줘야함 (익명클래스로)
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                butDialog.setText(itemArr[which]);
+            }
+        });*/
+       //라디오 버튼 목록
+        dialog.setSingleChoiceItems(itemArr, 0, new DialogInterface.OnClickListener() { //항목이 클릭되었을 때 처리되게 하려면 여기에 설정해줘야함 (익명클래스로)
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 butDialog.setText(itemArr[which]);
             }
         });
-        dialog.setPositiveButton("OK", null); //아무 객체도 지정하지 않을 때 null 사용
+        //dialog.setPositiveButton("OK", null); //아무 객체도 지정하지 않을 때 null 사용
         dialog.show(); //보이게 설정하기 위해서는 반드시 필요
     }
 }
